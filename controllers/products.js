@@ -2,33 +2,37 @@ const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = async (req, res) => {
-  const result = await mongodb
+  mongodb
     .getDb()
     .db("project2")
     .collection("products")
-    .find();
-  result.toArray().then((lists) => {
-    res.setHeader("Content-Type", "application/json");
-    res.status(200).json(lists);
-  });
+    .find()
+    .toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(lists);
+    });
 };
 
 const getSingle = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const result = await mongodb
+  mongodb
     .getDb()
     .db("project2")
     .collection("products")
-    .find({ _id: userId });
-  result.toArray().then((lists) => {
-    res.setHeader("Content-Type", "application/json");
-    res.status(200).json(lists[0]);
-  });
+    .find({ _id: userId })
+    .toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(lists);
+    });
 };
 
 const postProduct = async (req, res) => {
   const product = {
-    product_id: req.body.product_id,
     name: req.body.name,
     price: req.body.price,
     category: req.body.category,
@@ -48,7 +52,6 @@ const postProduct = async (req, res) => {
 const putProduct = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const product = {
-    product_id: req.body.product_id,
     name: req.body.name,
     price: req.body.price,
     category: req.body.category,
@@ -73,7 +76,7 @@ const deleteProduct = async (req, res) => {
     .db("project2")
     .collection("products")
     .deleteOne({ _id: userId }, true);
-  if (result.acknowledged) {
+  if (result.deleteProduct > 0) {
     res.status(200).send();
   } else {
     res.status(500).json(result.error);

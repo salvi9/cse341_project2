@@ -2,28 +2,33 @@ const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = async (req, res) => {
-  const result = await mongodb
+  mongodb
     .getDb()
     .db("project2")
     .collection("users")
-    .find();
-  result.toArray().then((lists) => {
-    res.setHeader("Content-Type", "application/json");
-    res.status(200).json(lists);
-  });
+    .find()
+    .toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(lists);
+    });
 };
 
 const getSingle = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const result = await mongodb
+  mongodb
     .getDb()
     .db("project2")
     .collection("users")
-    .find({ _id: userId });
-  result.toArray().then((lists) => {
-    res.setHeader("Content-Type", "application/json");
-    res.status(200).json(lists[0]);
-  });
+    .find({ _id: userId })
+    .toArray((err, lists) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      }
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(lists);
+    });
 };
 
 const postUser = async (req, res) => {
@@ -79,7 +84,7 @@ const deleteUser = async (req, res) => {
     .db("project2")
     .collection("users")
     .deleteOne({ _id: userId }, true);
-  if (result.acknowledged) {
+  if (result.deleteUser > 0) {
     res.status(200).send();
   } else {
     res.status(500).json(result.error);
