@@ -17,6 +17,10 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid product id to find a product.");
+  }
+  const userId = new ObjectId(req.params.id);
   mongodb
     .getDb()
     .db("project2")
@@ -50,6 +54,9 @@ const postProduct = async (req, res) => {
 };
 
 const putProduct = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid product id to update a product.");
+  }
   const userId = new ObjectId(req.params.id);
   const product = {
     name: req.body.name,
@@ -70,6 +77,9 @@ const putProduct = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid product id to delete a product.");
+  }
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()

@@ -17,6 +17,10 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid user id to find a user.");
+  }
+  const userId = new ObjectId(req.params.id);
   mongodb
     .getDb()
     .db("project2")
@@ -54,6 +58,9 @@ const postUser = async (req, res) => {
 };
 
 const putUser = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid user id to update a user.");
+  }
   const userId = new ObjectId(req.params.id);
   const user = {
     firstName: req.body.firstName,
@@ -78,6 +85,9 @@ const putUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must use a valid user id to delete a user.");
+  }
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
