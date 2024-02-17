@@ -25,7 +25,7 @@ const saveUsers = (req, res, next) => {
 const saveProducts = (req, res, next) => {
   const validationRule = {
     name: "required|string",
-    price: "required|int",
+    price: "required|string",
     category: "required|string",
   };
   validator(req.body, validationRule, {}, (err, status) => {

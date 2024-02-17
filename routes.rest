@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ### DELETE User
-DELETE http://localhost:8080/users/65c7fbaaa71a7a21ae9a45d6 HTTP/1:1
+DELETE http://localhost:8080/users/65d017017fce33865c6b0b91 HTTP/1:1
 
 
 ### Get all Products

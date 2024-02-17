@@ -14,9 +14,15 @@
     "/users/": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -70,9 +76,23 @@
     "/users/{id}": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -120,9 +140,6 @@
           "204": {
             "description": "No Content"
           },
-          "400": {
-            "description": "Bad Request"
-          },
           "412": {
             "description": "Precondition Failed"
           },
@@ -133,9 +150,20 @@
       },
       "delete": {
         "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -143,9 +171,15 @@
     "/products/": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -187,9 +221,23 @@
     "/products/{id}": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -238,9 +286,23 @@
       },
       "delete": {
         "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
