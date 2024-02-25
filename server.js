@@ -9,7 +9,7 @@ const app = express();
 const config = {
   authRequired: true,
   auth0Logout: true,
-  secret: "a long, randomly-generated string stored in env",
+  secret: "HH0JRZqQQ1YAb-NBvvr8fCYWjQPNacggp5fvErivKh60-24_LPyiH64I_zOOTJXU",
   baseURL: "https://cse341-project2-jkeq.onrender.com",
   clientID: "a36xodSxREXaLHZaGz2QchlxZuS08np2",
   issuerBaseURL: "https://dev-kotdc84ycyixelxm.us.auth0.com",
