@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongodb = require("./db/connect");
 const { auth, requiresAuth } = require("express-openid-connect");
+require("dotenv").config();
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -9,10 +10,10 @@ const app = express();
 const config = {
   authRequired: true,
   auth0Logout: true,
-  secret: "HH0JRZqQQ1YAb-NBvvr8fCYWjQPNacggp5fvErivKh60-24_LPyiH64I_zOOTJXU",
-  baseURL: "https://cse341-project2-jkeq.onrender.com",
-  clientID: "a36xodSxREXaLHZaGz2QchlxZuS08np2",
-  issuerBaseURL: "https://dev-kotdc84ycyixelxm.us.auth0.com",
+  secret: process.env.AUTH0_SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL,
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
