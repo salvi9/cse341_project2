@@ -10,7 +10,7 @@ const config = {
   authRequired: true,
   auth0Logout: true,
   secret: "a long, randomly-generated string stored in env",
-  baseURL: "http://localhost:8080",
+  baseURL: "https://cse341-project2-jkeq.onrender.com",
   clientID: "qBzE1mfZVPvTZ02SpLTlJgoc4Bflh2Dw",
   issuerBaseURL: "https://dev-kotdc84ycyixelxm.us.auth0.com",
 };
