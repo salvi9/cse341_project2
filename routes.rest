@@ -25,7 +25,7 @@ content-type: application/json
 }
 
 ### PUT User (update)
-PUT http://localhost:8080/users/65c7fbaaa71a7a21ae9a45d6 HTTP/1:1
+PUT http://localhost:8080/users/65d02000113f611a668b0458 HTTP/1:1
 Content-Type: application/json
 
 {
@@ -39,19 +39,19 @@ Content-Type: application/json
 }
 
 ### DELETE User
-DELETE http://localhost:8080/users/65d017017fce33865c6b0b91 HTTP/1:1
+DELETE http://localhost:8080/users/65d02000113f611a668b0458 HTTP/1:1
 
 
 ### Get all Products
 GET http://localhost:8080/products
 ### Get by ID
-GET http://localhost:8080/products/65c7dbbf27d03db81f2eeb12
+GET http://localhost:8080/products/65d01c481de3ffa43d09f174
 ### Get by ID
-GET http://localhost:8080/products/65c7dbbf27d03db81f2eeb13
+GET http://localhost:8080/products/65d01c481de3ffa43d09f175
 ### Get by ID
-GET http://localhost:8080/products/65c7dbbf27d03db81f2eeb14
+GET http://localhost:8080/products/65d01c481de3ffa43d09f176
 ### Get by ID
-GET http://localhost:8080/products/65c7dbbf27d03db81f2eeb15
+GET http://localhost:8080/products/65d01c481de3ffa43d09f177
 
 ### POST Product (create) 
 POST http://localhost:8080/products HTTP/1:1
@@ -59,22 +59,22 @@ content-type: application/json
 
 {
   "name": "Power Rangers: Red Ranger Action Figure",
-  "price": 14.99,
+  "price": "14.99",
   "category": "Action Figure"
 }
 
 ### PUT Product (update)
-PUT http://localhost:8080/products/65c7fbf5a71a7a21ae9a45d8 HTTP/1:1
+PUT http://localhost:8080/products/65d02074113f611a668b0459 HTTP/1:1
 Content-Type: application/json
 
 {
   "name": "Power Rangers: Blue Ranger Action Figure",
-  "price": 14.99,
+  "price": "14.99",
   "category": "Action Figure"
 }
 
 ### DELETE Product
-DELETE http://localhost:8080/products/65c7fbeda71a7a21ae9a45d7 HTTP/1:1
+DELETE http://localhost:8080/products/65d02074113f611a668b0459 HTTP/1:1
 
 
 // Render
@@ -104,7 +104,7 @@ content-type: application/json
 }
 
 ### PUT User (update)
-PUT https://cse341-project2-jkeq.onrender.com/users/65c7fc4082a55ab5bf526d5c HTTP/1:1
+PUT https://cse341-project2-jkeq.onrender.com/users/65d020ca87752020144b34f7 HTTP/1:1
 Content-Type: application/json
 
 {
@@ -118,19 +118,19 @@ Content-Type: application/json
 }
 
 ### Delete User
-DELETE https://cse341-project2-jkeq.onrender.com/users/65c7fc4082a55ab5bf526d5c HTTP/1:1
+DELETE https://cse341-project2-jkeq.onrender.com/users/65d020ca87752020144b34f7 HTTP/1:1
 
 
 ### Get all Products
 GET https://cse341-project2-jkeq.onrender.com/products
 ### Get by ID
-GET https://cse341-project2-jkeq.onrender.com/products/65c7dbbf27d03db81f2eeb12
+GET https://cse341-project2-jkeq.onrender.com/products/65d01c481de3ffa43d09f174
 ### Get by ID
-GET https://cse341-project2-jkeq.onrender.com/products/65c7dbbf27d03db81f2eeb13
+GET https://cse341-project2-jkeq.onrender.com/products/65d01c481de3ffa43d09f175
 ### Get by ID
-GET https://cse341-project2-jkeq.onrender.com/products/65c7dbbf27d03db81f2eeb14
+GET https://cse341-project2-jkeq.onrender.com/products/65d01c481de3ffa43d09f176
 ### Get by ID
-GET https://cse341-project2-jkeq.onrender.com/products/65c7dbbf27d03db81f2eeb15
+GET https://cse341-project2-jkeq.onrender.com/products/65d01c481de3ffa43d09f177
 
 ### POST Product
 POST https://cse341-project2-jkeq.onrender.com/products HTTP/1:1
@@ -138,19 +138,19 @@ content-type: application/json
 
 {
   "name": "Power Rangers: Red Ranger Action Figure",
-  "price": 14.99,
+  "price": "14.99",
   "category": "Action Figure"
 }
 
 ### PUT Product (update)
-PUT https://cse341-project2-jkeq.onrender.com/products/65c7fc7b82a55ab5bf526d5d HTTP/1:1
+PUT https://cse341-project2-jkeq.onrender.com/products/65d0212f87752020144b34f8 HTTP/1:1
 Content-Type: application/json
 
 {
   "name": "Power Rangers: Blue Ranger Action Figure",
-  "price": 14.99,
+  "price": "14.99",
   "category": "Action Figure"
 }
 
 ### Delete Product
-DELETE https://cse341-project2-jkeq.onrender.com/products/65c7fc7b82a55ab5bf526d5d HTTP/1:1
+DELETE https://cse341-project2-jkeq.onrender.com/products/65d0212f87752020144b34f8 HTTP/1:1

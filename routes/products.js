@@ -4,6 +4,7 @@ const router = express.Router();
 const productsController = require("../controllers/products");
 const validation = require("../middleware/validate");
 
+
 router.get("/", productsController.getAll);
 
 router.get("/:id", productsController.getSingle);
