@@ -11,7 +11,7 @@ const config = {
   auth0Logout: true,
   secret: "a long, randomly-generated string stored in env",
   baseURL: "https://cse341-project2-jkeq.onrender.com",
-  clientID: "qBzE1mfZVPvTZ02SpLTlJgoc4Bflh2Dw",
+  clientID: "a36xodSxREXaLHZaGz2QchlxZuS08np2",
   issuerBaseURL: "https://dev-kotdc84ycyixelxm.us.auth0.com",
 };
 
